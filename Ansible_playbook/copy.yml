@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+  - copy:
+     src: "/amanjee.txt"
+     dest: "/am.txt"
+

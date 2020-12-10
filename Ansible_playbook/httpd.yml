@@ -1,0 +1,17 @@
+- hosts: all
+  tasks:
+  - copy:
+     src: '~/Desktop/ansible/yum_config.repo'
+     dest: '/etc/yum.repos.d/yum_config.repo'
+  - package:
+     name: 'httpd'
+     state: 'present'
+  - copy:
+     src: '~/Desktop/ansible/ind.html'
+     dest: '/var/www/html/index.html'
+  - service:
+     name: 'httpd'
+     state: 'started'
+  - service:
+     name: 'firewalld'
+     state: stopped
